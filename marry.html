@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Files</title>
+  <style>
+    /* add your CSS styles here */
+    .file-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+    .file-item {
+      width: calc(33.33% - 1em);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      border-radius: 0.5em;
+      overflow: hidden;
+    }
+    .file-preview {
+      position: relative;
+      height: 0;
+      padding-bottom: 75%; /* adjust to aspect ratio of your preview image */
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+    .file-preview:before {
+      content: "Play video fullscreen";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .file-preview:hover:before {
+      opacity: 1;
+    }
+    .file-preview video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: black;
+    }
+    .file-description {
+      padding: 0.5em;
+      font-size: 0.8em;
+    }
+    .file-name {
+      font-weight: bold;
+    }
+    .file-type {
+      font-style: italic;
+    }
+    .file-reasons {
+      font-size: 0.8em;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="file-list">
+    <div class="file-item">
+      <div class="file-preview" style="background-image: url(placeholder-preview.jpg)">
+        <video src="placeholder-video.mp4"></video>
+      </div>
+      <div class="file-description">
+        <div class="file-name">Placeholder File Name</div>
+        <div class="file-type">File Type</div>
+        <div class="file-reasons">Reasons for Sharing</div>
+      </div>
+    </div>
+    <!-- add more file items here -->
+    <div class="file-item">
+      <div class="file-preview" style="background-image: url(placeholder-preview.jpg)">
+        <video src="placeholder-video.mp4"></video>
+      </div>
+      <div class="file-description">
+        <div class="file-name">Placeholder File Name</div>
+        <div class="file-type">File Type</div>
+        <div class="file-reasons">Reasons for Sharing</div>
+      </div>
+    </div>
+    <!-- add more file items here -->
+    <div class="file-item">
+      <div class="file-preview" style="background-image: url(placeholder-preview.jpg)">
+        <video src="placeholder-video.mp4"></video>
+      </div>
+      <div class="file-description">
+        <div class="file-name">Placeholder File Name</div>
+        <div class="file-type">File Type</div>
+        <div class="file-reasons">Reasons for Sharing</div>
+      </div>
+    </div>
+    <!-- add more file items here -->
+    <div class="file-item">
+      <div class="file-preview" style="background-image: url(placeholder-preview.jpg)">
+        <video src="placeholder-video.mp4"></video>
+      </div>
+      <div class="file-description">
+        <div class="file-name">Placeholder File Name</div>
+        <div class="file-type">File Type</div>
+        <div class="file-reasons">Reasons for Sharing</div>
+      </div>
+    </div>
+    <!-- add more file items here -->
+  </div>
+  <script>
+    function playVideo(preview) {
+      var video = preview.querySelector('video');
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
